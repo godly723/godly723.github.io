@@ -1,0 +1,151 @@
+<!-- ========================================================================= -->
+<!-- PROJECT MODULE: CREATOR COMPONENT INTERFACE ENVIRONMENT                    -->
+<!-- REPOSITORY DOMAIN: CR4NK CORE SERVICES                                     -->
+<!-- AUTHOR: SYSTEM INTEGRATION ARCHITECT & godly723                           -->
+<!-- PRODUCTION LIFECYCLE: STABLE DEPLOYMENT VERSION 4.2.1                     -->
+<!-- ========================================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CR4NK-About</title>
+    
+    <!-- --------------------------------------------------------------------- -->
+    <!-- STYLING INTERFACE SCHEMATICS & MATRIX CONFIGURATIONS                  -->
+    <!-- --------------------------------------------------------------------- -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: #222;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar a {
+            color: #aaaaaa;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .navbar a:hover,
+        .navbar a:active,
+        .navbar a:focus {
+            background-color: #333;
+            color: #007bff;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .about-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .about-card h1 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 32px;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .about-card p {
+            color: #bbbbbb;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .profile-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 2px solid #333;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
+
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- GLOBAL ROUTING NAVIGATION CONSOLE LAYER                               -->
+    <!-- --------------------------------------------------------------------- -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="games.html">Games</a>
+        <a href="engines.html">Engines</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- PRIMARY CORE CONTENT MANIFEST PIPELINE                                -->
+    <!-- --------------------------------------------------------------------- -->
+    <div class="content scroll-fade">
+        <div class="about-card">
+            <h1>About Me</h1>
+            <p>Hey! I'm a new'ish game developer learning how to code websites. Welcome to my page!</p>
+            <p>I am a passionate indie game developer building the <strong>ORIGINS</strong> horror franchise using custom-modified TurboWarp engines.</p>
+            
+            <img src="./steam-user.png" alt="My Steam Profile" class="profile-img">
+        </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- SCRIPT APPLICATION PROCESSOR ENGINE LAYER                             -->
+    <!-- --------------------------------------------------------------------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".scroll-fade");
+            
+            function checkScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); 
+        });
+    </script>
+
+</body>
+</html>

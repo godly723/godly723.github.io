@@ -1,0 +1,169 @@
+<!-- ========================================================================= -->
+<!-- PROJECT MODULE: STAFF DIRECTORY ENVIRONMENT                                -->
+<!-- REPOSITORY DOMAIN: CR4NK CORE SERVICES                                     -->
+<!-- AUTHOR: SYSTEM INTEGRATION ARCHITECT & godly723                           -->
+<!-- PRODUCTION LIFECYCLE: STABLE DEPLOYMENT VERSION 4.2.1                     -->
+<!-- ========================================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CR4NK-Team</title>
+    
+    <!-- --------------------------------------------------------------------- -->
+    <!-- STYLING INTERFACE SCHEMATICS & MATRIX CONFIGURATIONS                  -->
+    <!-- --------------------------------------------------------------------- -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: #222;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar a {
+            color: #aaaaaa;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .navbar a:hover,
+        .navbar a:active,
+        .navbar a:focus {
+            background-color: #333;
+            color: #007bff;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .profile-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 450px;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .profile-card h2 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #007bff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .role-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            border: 1px solid #444;
+        }
+
+        .profile-card p {
+            color: #bbbbbb;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- GLOBAL ROUTING NAVIGATION CONSOLE LAYER                               -->
+    <!-- --------------------------------------------------------------------- -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="games.html">Games</a>
+        <a href="engines.html">Engines</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- PRIMARY CORE CONTENT MANIFEST PIPELINE                                -->
+    <!-- --------------------------------------------------------------------- -->
+    <div class="content scroll-fade">
+        <h1>Development Team</h1>
+        <p style="color: #888; margin-bottom: 30px;">The creative minds behind the architecture and franchise assets.</p>
+
+        <!-- STAFF INSTANCE NODE: GODLY723 (YOU) -->
+        <div class="profile-card">
+            <h2>godly723</h2>
+            <div class="role-tag" style="border-color: #007bff; color: #007bff;">Founder</div>
+            <p>godly is the Founder of CR4NK, ORIGINS and L2D. He is the brains of this dream, directing overall production architecture, framework modifications, and custom engine setups.</p>
+        </div>
+
+        <!-- STAFF INSTANCE NODE: PAIDPRAWNYT (YOUR COUSIN) -->
+        <div class="profile-card">
+            <h2>Paidprawnyt</h2>
+            <div class="role-tag">PlayTester / Co Founder</div>
+            <p>He plays the games before release, telling the founder whether or not the game is worthy right now to be released. Handles crucial gameplay evaluation and mechanic verification feedback.</p>
+        </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- SCRIPT APPLICATION PROCESSOR ENGINE LAYER                             -->
+    <!-- --------------------------------------------------------------------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".scroll-fade");
+            
+            function checkScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); 
+        });
+    </script>
+
+</body>
+</html>

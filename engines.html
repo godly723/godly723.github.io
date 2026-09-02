@@ -1,0 +1,168 @@
+<!-- ========================================================================= -->
+<!-- PROJECT MODULE: CORE BACKEND SYSTEM ARCHITECTURE ENVIRONMENT               -->
+<!-- REPOSITORY DOMAIN: CR4NK CORE SERVICES                                     -->
+<!-- AUTHOR: SYSTEM INTEGRATION ARCHITECT & godly723                           -->
+<!-- PRODUCTION LIFECYCLE: STABLE DEPLOYMENT VERSION 4.2.1                     -->
+<!-- ========================================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CR4NK-Engines</title>
+    
+    <!-- --------------------------------------------------------------------- -->
+    <!-- STYLING INTERFACE SCHEMATICS & MATRIX CONFIGURATIONS                  -->
+    <!-- --------------------------------------------------------------------- -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: #222;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar a {
+            color: #aaaaaa;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .navbar a:hover,
+        .navbar a:active,
+        .navbar a:focus {
+            background-color: #333;
+            color: #007bff;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .engine-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .engine-card h2 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 26px;
+            margin-top: 0;
+            color: #007bff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .engine-specs {
+            font-size: 13px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .engine-card p {
+            color: #bbbbbb;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- GLOBAL ROUTING NAVIGATION CONSOLE LAYER                               -->
+    <!-- --------------------------------------------------------------------- -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="games.html">Games</a>
+        <a href="engines.html">Engines</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- PRIMARY CORE CONTENT MANIFEST PIPELINE                                -->
+    <!-- --------------------------------------------------------------------- -->
+    <div class="content scroll-fade">
+        <h1>Custom Game Engines</h1>
+        <p style="color: #888; margin-bottom: 30px;">The backend tech and frameworks driving our custom gaming projects.</p>
+
+        <!-- SUBMODULE CONTAINER: ENGINE THREE (UPDATED TECHNICAL ARCHITECTURE) -->
+        <div class="engine-card">
+            <h2>Geared 2 Engine</h2>
+            <div class="engine-specs">Status: In Active Planning • Framework: Heavily Modded TurboWarp • Built For: L2D Project</div>
+            <p>Our upcoming powerhouse framework. Running on a heavily modded TurboWarp platform layer, Geared 2 introduces a completely overhauled custom physics system designed from scratch. It is engineered specifically to handle dense zombie hordes, custom bullet trajectories, and fast survival-shooter mechanics without sacrificing web runtime performance.</p>
+        </div>
+
+        <!-- SUBMODULE CONTAINER: ENGINE TWO -->
+        <div class="engine-card">
+            <h2>TurboWarp (Geared + Mod)</h2>
+            <div class="engine-specs">Status: Operational • Framework: Modded TurboWarp • Built For: ORIGINS 3 & 4</div>
+            <p>An upgraded variant of our horror setup. The Geared + Mod tier introduces enhanced graphical adjustments, memory layout optimizations, and advanced scripting logic extensions to match the decaying, atmospheric requirements of the later franchise installments.</p>
+        </div>
+
+        <!-- SUBMODULE CONTAINER: ENGINE ONE -->
+        <div class="engine-card">
+            <h2>TurboWarp (Geared Mod)</h2>
+            <div class="engine-specs">Status: Live & Stable • Framework: Modded TurboWarp • Built For: ORIGINS 1 & 2</div>
+            <p>Our primary runtime framework. Built on top of a heavily optimized custom TurboWarp compiler layer, the standard Geared Mod allows for rapid scene transitions, high-fidelity sound cue processing, and strict jumpscare tracking variables required for atmospheric horror layouts.</p>
+        </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------- -->
+    <!-- SCRIPT APPLICATION PROCESSOR ENGINE LAYER                             -->
+    <!-- --------------------------------------------------------------------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".scroll-fade");
+            
+            function checkScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); 
+        });
+    </script>
+
+</body>
+</html>
